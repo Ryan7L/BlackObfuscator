@@ -25,6 +25,7 @@ import top.niunaijun.obfuscator.ObfuscatorConfiguration;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -52,6 +53,8 @@ public class BlackObfuscatorCmd extends BaseCmd {
 
     @Opt(opt = "a", longOpt = "allow", description = "Allow List File Path")
     private Path allowList;
+
+    private Path dic;
 
     /**
      * whileList
@@ -83,14 +86,14 @@ public class BlackObfuscatorCmd extends BaseCmd {
             checkFilter();
             checkInput();
 
-            input = input.toAbsolutePath();
-
+            input = input.toAbsolutePath();//input.toAbsolutePath();
+//            input = Paths.get("E:\\WorkSpace\\ForkProject\\BlackObfuscator-ASPlugin\\app\\build\\outputs\\apk\\debug\\classes.dex").toAbsolutePath();
             if (output == null) {
                 output = Paths.get("./", "obf.dex");
             }
 
             output = output.toAbsolutePath();
-
+//            output = Paths.get("E:\\WorkSpace\\ForkProject\\BlackObfuscator-ASPlugin\\app\\build\\outputs\\apk\\debug\\classes_out.dex").toAbsolutePath();
             tempJar = Paths.get(output.getParent().toString(), System.currentTimeMillis() + "obf.jar").toFile();
             splitDex = Paths.get(output.getParent().toString(), System.currentTimeMillis() + "split.dex").toFile();
             obfDex = Paths.get(output.getParent().toString(), System.currentTimeMillis() + "obf.dex").toFile();
