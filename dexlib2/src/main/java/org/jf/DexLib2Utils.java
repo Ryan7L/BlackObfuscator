@@ -37,13 +37,10 @@ public class DexLib2Utils {
 		}
 	}
 
-	public static long splitDex(File in, File out, List<String> whiteList, List<String> blackList,String[] dic) {
+	public static long splitDex(File in, File out, List<String> whiteList, List<String> blackList) {
 		if (whiteList.size() == 0)
 			return 0;
-		if (dic != null && dic.length != 0){
-			System.out.println("dic" + dic);
-			ObfDic.a = dic;
-		}
+
 		try {
 			/*
 			  Convert className to smali class format

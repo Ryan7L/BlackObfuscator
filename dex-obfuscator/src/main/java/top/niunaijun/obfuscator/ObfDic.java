@@ -5,44 +5,14 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class ObfDic {
-    public static String[] getDic() {
-        // 指定txt文件的路径
-        String filePath = "D:\\DevelopmentTools\\file.txt";
-        String[] arr = null;
-        // 创建一个Scanner对象来读取文件
-        try {
-            File file = new File(filePath);
-            Scanner scanner = new Scanner(file);
 
-            // 计算文件中的行数，以便创建合适大小的数组
-            int lines = 0;
-            while (scanner.hasNextLine()) {
-                lines++;
-                scanner.nextLine();
-            }
-            scanner.close();
-
-            // 创建一个与文件行数相同大小的String数组
-            String[] dataArray = new String[lines];
-
-            // 重新打开文件以读取数据，并将每一行的数据存储到数组中
-            scanner = new Scanner(file);
-            for (int i = 0; i < lines; i++) {
-                dataArray[i] = scanner.nextLine();
-            }
-            scanner.close();
-
-            // 打印数组中的数据，仅作为示例
-            for (String data : dataArray) {
-                System.out.println(data);
-            }
-
-        } catch (FileNotFoundException e) {
-            System.out.println("文件未找到：" + e.getMessage());
+    public static void setDic(String[] dic){
+        if (dic != null && dic.length != 0){
+            ObfDic.dic = dic;
         }
-        return arr;
     }
-    public static String[] a = {"a",
+
+    public static String[] dic = {"a",
             "b",
             "c",
             "d",
@@ -3394,7 +3364,6 @@ public class ObfDic {
             "adtf",
             "adtg",
     };
-    public static String[] dic = a;
         // getDic();
 //    ("۫۫۬\n" +
 //            "ۨۚۢ\n" +

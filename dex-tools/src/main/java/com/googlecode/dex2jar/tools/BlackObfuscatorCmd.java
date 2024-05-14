@@ -61,7 +61,6 @@ public class BlackObfuscatorCmd extends BaseCmd {
      */
     private final List<String> whileList = new ArrayList<>();
 
-    private String[]dic = {};
     /**
      * blackList
      */
@@ -104,7 +103,7 @@ public class BlackObfuscatorCmd extends BaseCmd {
             File finalObfDex = obfDex;
             Runtime.getRuntime().addShutdownHook(new Thread(() -> deleteFile(finalTempJar, finalSplitDex, finalObfDex)));
 
-            long l = DexLib2Utils.splitDex(input.toFile(), splitDex, whileList, blackList,dic);
+            long l = DexLib2Utils.splitDex(input.toFile(), splitDex, whileList, blackList);
             if (l <= 0) {
                 System.out.println("No classes found");
                 return;
