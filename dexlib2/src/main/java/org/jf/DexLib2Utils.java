@@ -12,7 +12,6 @@ import org.jf.smali.Smali;
 import org.jf.smali.SmaliOptions;
 import org.jf.util.IndentingWriter;
 import org.jf.util.TrieTree;
-import top.niunaijun.obfuscator.ObfDic;
 
 import java.io.*;
 import java.util.ArrayList;
