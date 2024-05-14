@@ -7,6 +7,7 @@ allprojects  {
 }
 
 defaultTasks('clean','distZip')
+// 根目录运行 ./gradlew distZip，然后在BlackObfuscator\dex-tools\build\distributions找到压缩包
 
 subprojects {
   apply plugin: 'java'
