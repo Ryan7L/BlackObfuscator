@@ -53,14 +53,15 @@ public class BlackObfuscatorCmd extends BaseCmd {
 
     @Opt(opt = "a", longOpt = "allow", description = "Allow List File Path")
     private Path allowList;
-
-    private Path dic;
+//    @Opt(opt = "dic", longOpt = "allow", description = "Allow List File Path")
+//    private  dic;
 
     /**
      * whileList
      */
     private final List<String> whileList = new ArrayList<>();
 
+    private String[]dic = {};
     /**
      * blackList
      */
@@ -103,7 +104,7 @@ public class BlackObfuscatorCmd extends BaseCmd {
             File finalObfDex = obfDex;
             Runtime.getRuntime().addShutdownHook(new Thread(() -> deleteFile(finalTempJar, finalSplitDex, finalObfDex)));
 
-            long l = DexLib2Utils.splitDex(input.toFile(), splitDex, whileList, blackList);
+            long l = DexLib2Utils.splitDex(input.toFile(), splitDex, whileList, blackList,dic);
             if (l <= 0) {
                 System.out.println("No classes found");
                 return;
