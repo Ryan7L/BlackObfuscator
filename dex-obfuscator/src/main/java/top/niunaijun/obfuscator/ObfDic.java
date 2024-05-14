@@ -1,12 +1,16 @@
 package top.niunaijun.obfuscator;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+
+import java.util.Arrays;
 
 public class ObfDic {
 
     public static void setDic(String[] dic){
+        try {
+            System.out.println("AAAA"+ Arrays.toString(dic));
+        } catch (Exception e) {
+           e.printStackTrace();
+        }
         if (dic != null && dic.length != 0){
             ObfDic.dic = dic;
         }
