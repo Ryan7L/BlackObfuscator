@@ -68,10 +68,6 @@ cn.kaicity
 ## 感谢
 - [dex2jar](https://github.com/pxb1988/dex2jar)
 
-## 请作者儿子喝奶粉
-![xx](image/wechat.png)
-![xx](image/aliplay.jpg)
-
 ### License
 
 > ```
